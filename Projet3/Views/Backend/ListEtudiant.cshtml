@@ -1,0 +1,165 @@
+﻿@model IEnumerable<Projet3.Models.compte>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h3>Liste des étudiants inscrits</h3>
+
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cin)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prenom)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.filiere)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.classement_concours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.note_concours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.liste_concours)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cin)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prenom)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.filiere)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.classement_concours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.note_concours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.liste_concours)
+        </td>
+        @if (User.IsInRole("Administrateur"))
+        {
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.cne }) |
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.cne }) |
+
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.cne })*@
+                <div class="delete-section">
+                    <a class="delete-link" href="@Url.Action("Delete", new {id = item.cne})">Delete</a>
+                    <div class="btn btn-primary delete-confirm" style="display:none" data-delete-id="@item.cne">Confirm Delete</div>
+                </div>
+
+            </td>
+        }else{
+
+
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.cne }) 
+
+         
+
+        </td>
+        }
+
+    </tr>
+    }
+
+</table>
+
+    <script type="text/javascript">
+    $(function () {
+        $("a.delete-link").click(function () {
+            var deleteLink = $(this);
+            deleteLink.hide();
+            var confirmButton = deleteLink.siblings(".delete-confirm");
+            confirmButton.show();
+
+            var cancelDelete =  function () {
+                removeEvents();
+                showDeleteLink();
+            };
+
+            var deleteItem = function () {
+                removeEvents();
+                confirmButton.hide();
+                $.post(
+                    '@Url.Action("Delete")',
+                    AddAntiForgeryToken({ id: confirmButton.attr('data-delete-id') }))
+                   .done(function () {
+                       var parentRow = deleteLink.parents("tr:first");
+                       parentRow.fadeOut('fast', function () {
+                           parentRow.remove();
+                       });
+                   }).fail(function (data) {
+                       alert("error");
+                   });
+                return false;
+            };
+
+            var removeEvents = function () {
+                confirmButton.off("click", deleteItem);
+                $(document).on("click", cancelDelete);
+                $(document).off("keypress", onKeyPress);
+            };
+
+            var showDeleteLink = function () {
+                confirmButton.hide();
+                deleteLink.show();
+            };
+
+            var onKeyPress = function (e) {
+                //Cancel if escape key pressed
+                if (e.which == 27) {
+                    cancelDelete();
+                }
+            };
+
+            confirmButton.on("click", deleteItem);
+            $(document).on("click", cancelDelete);
+            $(document).on("keypress", onKeyPress);
+
+            return false;
+        });
+
+        AddAntiForgeryToken = function (data) {
+            data.__RequestVerificationToken = $('input[name=__RequestVerificationToken]').val();
+            return data;
+        };
+    });
+    </script>

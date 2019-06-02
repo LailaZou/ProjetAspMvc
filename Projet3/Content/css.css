@@ -1,0 +1,250 @@
+﻿body {
+    background-color: lightgrey;
+}
+.authentification_body {
+    background-image: url('../../Content/images/Start It Up (7).png');
+    background-size: cover
+}
+
+.big_title {
+    margin-left: 190px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.title {
+    font-family: 'Bell MT';
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+.form_authentif {
+    background-color: aquamarine;
+    background-color: rgb(128, 128, 128,0.3);
+    width: 350px;
+    transform: translate(70%,10%);
+    padding: 10px;
+}
+
+.warning {
+    color: red;
+    margin-left: 280px;
+    margin-top: 50px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#msform h3 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+#msform {
+    position: relative;
+    margin-top: 5px;
+}
+
+    #msform select {
+        width: 57%;
+    }
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        margin: 0 10%;
+    }
+
+    #msform label {
+        width: 34%;
+    }
+
+
+    #msform fieldset:not(:first-of-type) {
+        display: none;
+    }
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+}
+
+    #progressbar li {
+        text-align: center;
+        list-style-type: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 9px;
+        width: 33.33%;
+        float: left;
+        position: relative;
+        letter-spacing: 1px;
+    }
+
+        #progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 24px;
+            height: 24px;
+            line-height: 26px;
+            display: block;
+            font-size: 12px;
+            color: #333;
+            background: white;
+            border-radius: 25px;
+            margin: 0 auto 10px auto;
+        }
+
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            left: -50%;
+            top: 9px;
+            z-index: -1;
+        }
+
+        #progressbar li:first-child:after {
+            content: none;
+        }
+
+        #progressbar li.active:before, #progressbar li.active:after {
+            background: #2a0845;
+            color: white;
+        }
+
+.bienvenue {
+    font-family:'Gill Sans'; 
+    font-size:70px; 
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: white;
+}
+.bienvenue2 {
+    font-family: 'Gill Sans';
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+
+.slide1 {
+    background-image:url('../../Content/images/ENSA-Concours.png');
+    height:510px;
+    background-size: contain; 
+    background-position:center;
+}
+
+.slide0 {
+   background-image:url('../../Content/images/ensas2.png');
+   height:510px;background-size: cover; 
+   background-position:center;
+}
+
+.slide2 {
+    background-image:url('../../Content/images/Capture.png');
+    height:510px;background-size: cover; 
+    background-position:center;
+
+}
+
+.hrstyle {
+    height: 1px;
+    color: cadetblue;
+    background-color: cadetblue;
+    border: none;
+}
+
+.panel1 {
+    font-family: 'Bell MT';
+    background-color: lavender;
+}
+
+.panel2 {
+    background-image: url('../../Content/images/bg.jpg');
+    background-size: cover;
+}
+
+#div_res {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    margin: 0 10%;
+    width: 70%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.titleSub {
+    margin-top:0px; font-family:'Bell MT';
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+.sub{
+    margin-top: -40px;
+}
+
+.main {
+    width: 100%;
+    margin: auto;
+    font-family: 'Bell MT';
+    margin-top: 5px;
+    background-color: aliceblue;
+    align-content: center;
+    overflow: hidden;
+    position: relative
+}
+
+.leftDiv {
+    background-color: midnightblue;
+    border-radius: 1%;
+    padding-top: 30px;
+    color: white;
+    text-align: center;
+    height: 100%;
+    position: absolute;
+}
+
+.imgContainer {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+}
+
+.divMenu {
+    margin-top: 130px;
+}
+
+.labelDiv {
+    font-weight: 600;
+    font-size: medium;
+    padding-left: 0px;
+    line-height: 35px;
+}
+
+.infoDiv {
+    font-weight: 300;
+    font-size: medium;
+    padding-left: 0px;
+    line-height: 35px;
+}
+
+.link {
+    color: white;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}

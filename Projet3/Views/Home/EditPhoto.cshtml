@@ -1,0 +1,28 @@
+﻿<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<body >
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 animate">
+            <form id="msform" action="EditPhoto1" method="post" enctype = "multipart/form-data">
+                <fieldset>
+                    <div class="col-md-6">
+                        <div class="col-md-6">
+                            <img src="@ViewData["href"]"  id="img" width="300" height="300"/>
+                        </div>
+                    </div>
+                    <h3 class="fs-title">PHOTO D'IDENTITE</h3>
+                    <div class="form-group">
+                        <label for="photo">Photo d'identité: </label>
+                        <input type="file" class="form-control-file" required id="photo" name="photo" onchange="readURL(this);" >
+                    </div>
+                    <input type="submit" name="next" class="btn btn-primary next center-block" value="Valider" />
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+

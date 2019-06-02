@@ -1,0 +1,391 @@
+﻿@model Projet3.Models.compte
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+@*<h2>Details</h2>
+
+    <div>
+        <h4>compte</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.cin)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cin)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mdp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mdp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nom)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nom)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.prenom)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.prenom)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.date_naissance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.date_naissance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.lieu_naissance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.lieu_naissance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.adresse)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.adresse)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.code_postal)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.code_postal)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tel)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.filiere)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.filiere)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.option_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.option_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.annee_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.annee_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mention_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mention_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.note_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.note_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.etablissement_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.etablissement_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.academie_bac)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.academie_bac)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.intitule_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.intitule_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.annee_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.annee_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mention_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mention_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.note_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.note_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.etablissement_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.etablissement_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ville_dip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ville_dip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.classement_concours)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.classement_concours)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.note_concours)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.note_concours)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.liste_concours)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.liste_concours)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.cne }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+<div class="row main" style="border: 3px solid white ; background-color: #f9f9f9;   border-radius: 15px;">
+    <div class="col-md-12">
+        <div class="col-md-4">
+               <br />
+               <br />
+             
+               
+                    <img src="~/Content/images/@(@Model.cne).jpg" style="width:150px; height:180px;"  class="img-thumbnail"  />
+                
+           
+            <h4>@Model.nom @Model.prenom</h4>
+            <h5>Filière choisie: @Model.filiere</h5>
+
+
+        </div>
+        
+        <div class="col-md-8">
+            <h4>
+                <span class="glyphicon glyphicon-user
+"></span> Informations personnelles:
+            </h4>
+            <hr class="col-sm-10" />
+            <div class="col-md-6 labelDiv">
+                CNE:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.cne
+            </div>
+            <div class="col-md-6 labelDiv">
+                Nom:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.nom
+            </div>
+            <div class="col-md-6 labelDiv">
+                Prénom:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.prenom
+            </div>
+            <div class="col-md-6 labelDiv">
+                CIN:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.cin
+            </div>
+            <div class="col-md-6 labelDiv">
+                Date de naissance:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.date_naissance
+            </div>
+            <div class="col-md-6 labelDiv">
+                Lieu de naissance:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.lieu_naissance
+            </div>
+            <div class="col-md-6 labelDiv">
+                Adresse:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.adresse
+            </div>
+            <div class="col-md-6 labelDiv">
+                Code postal:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.code_postal
+            </div>
+            <div class="col-md-6 labelDiv">
+                Téléphone:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.tel
+            </div>
+            <div class="col-md-6 labelDiv">
+                Email:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.email
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-8">
+            <h4 style="text-decoration:underline"><span class="glyphicon glyphicon-education"></span> Notes & diplomes:</h4>
+            <hr class="col-sm-10" />
+
+            <div><center><h4><strong>Baccalauréat @Model.option_bac </strong></h4></center></div>
+            <div class="col-md-6 labelDiv">
+                Année d'obtention:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.annee_bac
+            </div>
+            <div class="col-md-6 labelDiv">
+                Mention:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.mention_bac
+            </div>
+            <div class="col-md-6 labelDiv">
+                Moyenne générale:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.note_bac
+            </div>
+            <div class="col-md-6 labelDiv">
+                Etablissement:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.etablissement_bac
+            </div>
+            <div class="col-md-6 labelDiv">
+                Académie:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.academie_bac         <br /> <br />
+            </div>
+
+            <div><center><h4><strong>Diplome @Model.intitule_dip </strong></h4></center></div>
+            <div class="col-md-6 labelDiv">
+                Année d'obtention:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.annee_dip
+            </div>
+            <div class="col-md-6 labelDiv">
+                Mention:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.mention_dip
+            </div>
+            <div class="col-md-6 labelDiv">
+                Moyenne générale:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.note_dip
+            </div>
+            <div class="col-md-6 labelDiv">
+                Etablissement:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.etablissement_dip
+            </div>
+            <div class="col-md-6 labelDiv">
+                Académie:
+            </div>
+            <div class="col-md-6 infoDiv">
+                @Model.ville_dip
+            </div>
+
+        </div>
+    </div>
+    </div>
+

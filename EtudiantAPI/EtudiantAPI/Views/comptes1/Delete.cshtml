@@ -1,0 +1,232 @@
+﻿@model EtudiantAPI.Models.compte
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>compte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mdp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mdp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_naissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_naissance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lieu_naissance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lieu_naissance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.code_postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code_postal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.filiere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.filiere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.option_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.option_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.annee_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.annee_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mention_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mention_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etablissement_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etablissement_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.academie_bac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.academie_bac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.intitule_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.intitule_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.annee_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.annee_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mention_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mention_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.etablissement_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.etablissement_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ville_dip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ville_dip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.classement_concours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.classement_concours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_concours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_concours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.liste_concours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.liste_concours)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

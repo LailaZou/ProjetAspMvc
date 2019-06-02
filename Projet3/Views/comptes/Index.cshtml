@@ -1,0 +1,183 @@
+﻿@model IEnumerable<Projet3.Models.compte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mdp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prenom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_naissance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lieu_naissance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.code_postal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.filiere)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.option_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.annee_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mention_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.note_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etablissement_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.academie_bac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.intitule_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.annee_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mention_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.note_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etablissement_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ville_dip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.classement_concours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.note_concours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.liste_concours)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mdp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prenom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_naissance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lieu_naissance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.code_postal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.filiere)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.option_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.annee_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mention_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.note_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etablissement_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.academie_bac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.intitule_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.annee_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mention_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.note_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etablissement_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ville_dip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.classement_concours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.note_concours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.liste_concours)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cne }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cne }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cne })
+        </td>
+    </tr>
+}
+
+</table>

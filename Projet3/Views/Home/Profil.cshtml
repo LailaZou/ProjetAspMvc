@@ -1,0 +1,161 @@
+﻿@model Projet3.Models.compte1
+
+<div class="row main">
+    <div class="col-md-2 leftDiv">
+        <div class="imgContainer">
+            <img src= "@ViewData["src"]" class="avatar" /> <br />
+            <a href='@Url.Action("EditPhoto", "Home")'>
+                <img src="~/Content/images/Photo.png" style="width:15%;" />
+            </a>
+        </div>
+        <br />
+        <h4>@Model.nom @Model.prenom</h4>
+        <h5>Filière choisie: @Model.filiere</h5>
+
+        <div class="divMenu">
+            @Html.ActionLink("Modifier les informations", "Edit", "Home", new { @class = "link" })
+            <br />
+            @Html.ActionLink("Imprimer le reçu", "Imprimer", "Home", new { @class = "link" })
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+        <h4>
+            <span class="glyphicon glyphicon-user
+"></span> Informations personnelles:
+        </h4>
+        <hr class="col-sm-10" />
+        <div class="col-md-6 labelDiv">
+            CNE:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.cne
+        </div>
+        <div class="col-md-6 labelDiv">
+            Nom:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.nom
+        </div>
+        <div class="col-md-6 labelDiv">
+            Prénom:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.prenom
+        </div>
+        <div class="col-md-6 labelDiv">
+            CIN:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.cin
+        </div>
+        <div class="col-md-6 labelDiv">
+            Date de naissance:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.date_naissance
+        </div>
+        <div class="col-md-6 labelDiv">
+            Lieu de naissance:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.lieu_naissance
+        </div>
+        <div class="col-md-6 labelDiv">
+            Adresse:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.adresse
+        </div>
+        <div class="col-md-6 labelDiv">
+            Code postal:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.code_postal
+        </div>
+        <div class="col-md-6 labelDiv">
+            Téléphone:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.tel
+        </div>
+        <div class="col-md-6 labelDiv">
+            Email:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.email
+        </div>
+
+    </div>
+    <div class="col-md-5">
+        <h4 style="text-decoration:underline"><span class="glyphicon glyphicon-education"></span> Notes & diplomes:</h4>
+        <hr class="col-sm-10" />
+
+        <div><center><h4><strong>Baccalauréat @Model.option_bac </strong></h4></center></div>
+        <div class="col-md-6 labelDiv">
+            Année d'obtention:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.annee_bac
+        </div>
+        <div class="col-md-6 labelDiv">
+            Mention:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.mention_bac
+        </div>
+        <div class="col-md-6 labelDiv">
+            Moyenne générale:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.note_bac
+        </div>
+        <div class="col-md-6 labelDiv">
+            Etablissement:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.etablissement_bac
+        </div>
+        <div class="col-md-6 labelDiv">
+            Académie:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.academie_bac         <br /> <br />
+        </div>
+
+        <div><center><h4><strong>Diplome @Model.intitule_dip </strong></h4></center></div>
+        <div class="col-md-6 labelDiv">
+            Année d'obtention:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.annee_dip
+        </div>
+        <div class="col-md-6 labelDiv">
+            Mention:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.mention_dip
+        </div>
+        <div class="col-md-6 labelDiv">
+            Moyenne générale:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.note_dip
+        </div>
+        <div class="col-md-6 labelDiv">
+            Etablissement:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.etablissement_dip
+        </div>
+        <div class="col-md-6 labelDiv">
+            Académie:
+        </div>
+        <div class="col-md-6 infoDiv">
+            @Model.ville_dip
+        </div>
+
+    </div>
+    </div>
+

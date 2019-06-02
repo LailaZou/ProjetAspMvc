@@ -1,0 +1,189 @@
+﻿@model Projet3.Models.compte1
+
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<body class="sub">
+    <center>
+        <h2 class="titleSub">
+            Inscription
+        </h2>
+    </center>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 animate">
+            @using (Html.BeginForm("SaveCompte", "Home", FormMethod.Post, new { id = "msform", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <ul id="progressbar">
+                    <li class="active">Informations personnelles</li>
+                    <li>Filière</li>
+                    <li>Notes et diplomes</li>
+                </ul>
+                <fieldset>
+                    <h3 class="fs-title">INFORMATIONS PERSONNELLES</h3>
+                    <div class="col-md-6">
+                        <div class="form-group form-inline">
+                            <label>CNE: </label>
+                            @Html.TextBoxFor(x => x.cne, new { @class = "form-control", placeholder = "CNE" })
+                            @Html.ValidationMessageFor(model => model.cne, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline ">
+                            <label for="nom">Nom: </label>
+                            @Html.TextBoxFor(x => x.nom, new { @class = "form-control", placeholder = "Nom" })
+                            @Html.ValidationMessageFor(model => model.nom, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="prenom">Prénom: </label>
+                            @Html.TextBoxFor(x => x.prenom, new { @class = "form-control", placeholder = "Prénom" })
+                            @Html.ValidationMessageFor(model => model.prenom, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="cin">CIN: </label>
+                            @Html.TextBoxFor(x => x.cin, new { @class = "form-control", placeholder = "CIN" })
+                            @Html.ValidationMessageFor(model => model.cin, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="mdp">Mot de passe:</label>
+                            @Html.TextBoxFor(x => x.mdp, new { @class = "form-control", placeholder = "Mot de passe", type = "password" })
+                            @Html.ValidationMessageFor(model => model.mdp, "", new { @class = "text-danger" })
+                            <label for=""></label>
+                            <input type="password" class="form-control" id="mdpC" placeholder="Confirmer le mot de passe">
+                            <p id="errorMdp" class="text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Photo d'identité: </label>
+                            <input type="file" class="form-control-file" id="photo" name="photo">
+                            <p class="text-danger">@ViewData["imgError"]</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-inline">
+                            <label>Date de naissance: </label>
+                            @Html.TextBoxFor(x => x.date_naissance, new { @class = "form-control", placeholder = "Date de naissance", type = "date" })
+                            @Html.ValidationMessageFor(model => model.date_naissance, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline ">
+                            <label for="nom">Lieu de naissance: </label>
+                            @Html.TextBoxFor(x => x.lieu_naissance, new { @class = "form-control", placeholder = "Lieu de naissance" })
+                            @Html.ValidationMessageFor(model => model.lieu_naissance, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Adresse: </label>
+                            @Html.TextBoxFor(x => x.adresse, new { @class = "form-control", placeholder = "Adresse" })
+                            @Html.ValidationMessageFor(model => model.adresse, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Code postal: </label>
+                            @Html.TextBoxFor(x => x.code_postal, new { @class = "form-control", placeholder = "Code postal" })
+                            @Html.ValidationMessageFor(model => model.code_postal, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Téléphone:</label>
+                            @Html.TextBoxFor(x => x.tel, new { @class = "form-control", placeholder = "Téléphone" })
+                            @Html.ValidationMessageFor(model => model.tel, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Email:</label>
+                            @Html.TextBoxFor(x => x.email, new { @class = "form-control", placeholder = "Adresse", type = "email" })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <input type="button" name="next" class="btn btn-primary next1 center-block" value="Suivant" id="first" />
+                </fieldset>
+                <fieldset>
+                    <h3 class="fs-title">CHOISISSEZ VOTRE FILIERE</h3>
+                    <div class="form-group form-inline">
+                        <label for="filiere">Filiére: </label>
+                        @Html.DropDownListFor(x => x.filiere, new SelectList(new[] { "Génie informatique", "Génie réseaux et télécoms" , "GTR" }), "Please select",
+                        new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.filiere, "", new { @class = "text-danger" })
+                    </div>
+                    <input type="button" name="previous" class="previous btn btn-primary col-lg-offset-5" value="Précédent" />
+                    <input type="button" name="next" class="next btn btn-primary " value="Suivant" />
+                </fieldset>
+                <fieldset>
+                    <h3 class="fs-title">NOTES ET DIPLOMES</h3>
+                    <div class="col-md-6">
+                        <h4>Baccalauréat</h4>
+                        <div class="form-group form-inline">
+
+                            <label>Option: </label>
+                            @Html.TextBoxFor(x => x.option_bac, new { @class = "form-control", placeholder = "Option" })
+                            @Html.ValidationMessageFor(model => model.option_bac, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline ">
+                            <label for="nom">Année d'obtention: </label>
+                            @Html.TextBoxFor(x => x.annee_bac, new { @class = "form-control", placeholder = "Année d'optention" })
+                            @Html.ValidationMessageFor(model => model.annee_bac, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Mention: </label>
+                            @Html.TextBoxFor(x => x.mention_bac, new { @class = "form-control", placeholder = "Mention du baccalauréat" })
+                            @Html.ValidationMessageFor(model => model.mention_bac, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Moyenne générale: </label>
+                            @Html.TextBoxFor(x => x.note_bac, new { @class = "form-control", placeholder = "Moyenne générale" })
+                            @Html.ValidationMessageFor(model => model.note_bac, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Etablissement:</label>
+                            @Html.TextBoxFor(x => x.etablissement_bac, new { @class = "form-control", placeholder = "Etablissement" })
+                            @Html.ValidationMessageFor(model => model.etablissement_bac, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Académie:</label>
+                            @Html.TextBoxFor(x => x.academie_bac, new { @class = "form-control", placeholder = "Académie" })
+                            @Html.ValidationMessageFor(model => model.academie_bac, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Dernier diplome obtenu</h4>
+                        <div class="form-group form-inline">
+                            <label>Diplome: </label>
+                            @Html.TextBoxFor(x => x.intitule_dip, new { @class = "form-control", placeholder = "Intitulé du diplome" })
+                            @Html.ValidationMessageFor(model => model.intitule_dip, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline ">
+                            <label for="nom">Année d'obtention: </label>
+                            @Html.TextBoxFor(x => x.annee_dip, new { @class = "form-control", placeholder = "Année d'optention" })
+                            @Html.ValidationMessageFor(model => model.annee_dip, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Mention: </label>
+                            @Html.TextBoxFor(x => x.mention_dip, new { @class = "form-control", placeholder = "Mention" })
+                            @Html.ValidationMessageFor(model => model.mention_dip, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Moyenne générale: </label>
+                            @Html.TextBoxFor(x => x.note_dip, new { @class = "form-control", placeholder = "Moyenne générale" })
+                            @Html.ValidationMessageFor(model => model.note_dip, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Etablissement:</label>
+                            @Html.TextBoxFor(x => x.etablissement_dip, new { @class = "form-control", placeholder = "Etablissement" })
+                            @Html.ValidationMessageFor(model => model.etablissement_dip, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <label for="nom">Ville:</label>
+                            @Html.TextBoxFor(x => x.ville_dip, new { @class = "form-control", placeholder = "Ville" })
+                            @Html.ValidationMessageFor(model => model.ville_dip, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <input type="button" name="previous" class="previous btn btn-primary col-lg-offset-5" value="Précédent" />
+                    <input type="submit" name="next" class="next btn btn-primary " value="Valider" id="valider" />
+                </fieldset>
+            }
+        </div>
+    </div>
+    <p>Vous avez deja un compte @Html.ActionLink("Connectez-vous", "Authentification", "Home")</p>
+
+</body>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
